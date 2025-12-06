@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendrier des Évaluations - KIS</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://lh3.googleusercontent.com/d/1lQ3Babrs3Wgv4rakVmkK0oCWcM0cTKPK">
+</head>
+<body>
+  
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="header-top">
+        <img src="https://lh3.googleusercontent.com/d/1lQ3Babrs3Wgv4rakVmkK0oCWcM0cTKPK" alt="KIS Logo" class="logo">
+        <div class="header-content">
+          <h1 class="title">Calendrier des Évaluations</h1>
+          <p class="subtitle">Kawthar International School - Année 2025-2026</p>
+        </div>
+      </div>
+      
+      <div class="header-controls">
+        <div class="control-group">
+          <label for="classeSelect">🎓 Classe:</label>
+          <select id="classeSelect" class="select-classe">
+            <option value="PEI1">PEI 1</option>
+            <option value="PEI2">PEI 2</option>
+            <option value="PEI3">PEI 3</option>
+            <option value="PEI4">PEI 4</option>
+            <option value="PEI5">PEI 5</option>
+            <option value="DP1">DP 1</option>
+            <option value="DP2">DP 2</option>
+          </select>
+        </div>
+        
+        <button id="btnExport" class="btn-export">📦 Exporter</button>
+      </div>
+      
+      <div class="legend">
+        <span class="legend-item">🗓️ Orientation</span>
+        <span class="legend-item">🏖️ Vacances</span>
+        <span class="legend-item">📝 Examens</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVIGATION MATIÈRES -->
+  <nav class="nav-matieres">
+    <div class="container">
+      <button class="tab-matiere active" data-matiere="all">📊 Toutes les Matières</button>
+      <button class="tab-matiere" data-matiere="Français LL">🇫🇷 Français</button>
+      <button class="tab-matiere" data-matiere="Anglais AL">🇬🇧 Anglais</button>
+      <button class="tab-matiere" data-matiere="Mathématiques">📐 Maths</button>
+      <button class="tab-matiere" data-matiere="Sciences">🔬 Sciences</button>
+      <button class="tab-matiere" data-matiere="IS">🌍 IS</button>
+      <button class="tab-matiere" data-matiere="Arts">🎨 Arts</button>
+      <button class="tab-matiere" data-matiere="Design">💡 Design</button>
+    </div>
+  </nav>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="main-content">
+    <div class="container">
+      <div id="calendrier" class="calendrier">
+        <div class="loading">⏳ Chargement...</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- MODAL EXPORT -->
+  <div id="modalExport" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>📦 Options d'Export</h2>
+        <button class="btn-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <button class="export-option" data-type="zip">
+          <span class="icon">📦</span>
+          <div class="text">
+            <h3>ZIP - Toutes les Matières</h3>
+            <p>Un fichier par matière dans un ZIP</p>
+          </div>
+        </button>
+        
+        <button class="export-option" data-type="matiere">
+          <span class="icon">📄</span>
+          <div class="text">
+            <h3>Matière Actuelle</h3>
+            <p>Exporter uniquement la matière sélectionnée</p>
+          </div>
+        </button>
+        
+        <button class="export-option" data-type="complet">
+          <span class="icon">📋</span>
+          <div class="text">
+            <h3>Document Complet</h3>
+            <p>Toutes les matières en un seul fichier</p>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
